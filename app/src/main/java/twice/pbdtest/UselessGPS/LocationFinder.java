@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
+import twice.pbdtest.Tab2;
+
 /**
  * Created by MaximaXL on 2/21/2017.
  */

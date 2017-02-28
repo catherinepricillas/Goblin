@@ -42,7 +42,7 @@ public class GemAPI {
     private String mUserToken;
     private String mGemToken;
 
-    GemAPI(String gemToken, String idToken){
+     public GemAPI(String gemToken, String idToken){
         mUserToken = idToken;
         mGemToken = gemToken;
     }

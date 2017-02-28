@@ -11,17 +11,6 @@
     tools:context="twice.pbdtest.HomeActivity">
 
     <Button
-        android:text="Add Friend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAddFriend"
-        android:onClick="addFriendIntent"
-        android:layout_alignParentTop="true"
-        android:background="@color/yellow"
-        android:textColor="@color/white"
-        android:layout_alignStart="@+id/btnFList" />
-
-    <Button
         android:text="Set Brightness"
         android:background="@color/yellow"
         android:textColor="@color/white"
@@ -31,19 +20,7 @@
         android:onClick="callSetBrightness"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:text="compass"
-        android:background="@color/yellow"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCompass"
-        android:onClick="callCompass"
-        android:layout_below="@+id/btnAddFriend"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp" />
+        android:layout_marginBottom="60dp" />
 
     <Button
         android:text="Share"
@@ -53,43 +30,27 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnShare"
         android:onClick="shareIntent"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/btnCompass"
-        android:layout_alignStart="@+id/btnCompass" />
-
-    <Button
-        android:text="Friend List"
-        android:background="@color/yellow"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnFList"
-        android:onClick="callFriendList"
-        android:layout_marginBottom="23dp"
         android:layout_above="@+id/btnBrightness"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="View My Location"
-        android:background="@color/yellow"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button4"
-        android:onClick="viewMyLocation"
-        android:layout_above="@+id/btnFList"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp" />
+        android:layout_marginBottom="41dp" />
 
     <Button
-        android:text="Collect Gem"
+        android:text="Menu"
         android:background="@color/yellow"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:onClick="collectGem"
+        android:id="@+id/button6"
+        android:onClick="getFragment"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/btnShare" />
+
+    <ImageView android:src="@drawable/logogoblin"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/button6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
 
 </RelativeLayout>

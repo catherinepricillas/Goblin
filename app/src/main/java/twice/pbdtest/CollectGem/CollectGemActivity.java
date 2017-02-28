@@ -17,7 +17,7 @@ import twice.pbdtest.R;
 
 public class CollectGemActivity extends AppCompatActivity {
 
-    class RetriveGemTask extends AsyncTask<Pair<String,String>, Void, Gem >{
+    public class RetriveGemTask extends AsyncTask<Pair<String,String>, Void, Gem >{
 
         @Override
         protected Gem doInBackground(Pair<String, String>... params) {
@@ -29,7 +29,6 @@ public class CollectGemActivity extends AppCompatActivity {
             TextView t = (TextView) findViewById(R.id.message);
 
             t.setText("You got "+result.getCount() + " " + result.getType() + " gem" );
-
         }
     }
 

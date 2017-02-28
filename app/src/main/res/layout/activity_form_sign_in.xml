@@ -54,13 +54,12 @@
         android:text="Sign In"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="34dp"
         android:id="@+id/btnSignIn"
-        android:layout_marginStart="25dp"
-        android:layout_below="@+id/editTxtEmail"
-        android:layout_alignStart="@+id/textView2"
         android:background="@color/yellow"
         android:textColor="@color/white"
-        android:onClick="signIn" />
+        android:onClick="signIn"
+        android:layout_below="@+id/editTxtPassword"
+        android:layout_toStartOf="@+id/editTxtPassword" />
 
 </RelativeLayout>

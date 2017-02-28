@@ -97,6 +97,11 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void getFragment(View view){
+        Intent i = new Intent(this, GetFragment.class);
+        startActivity(i);
+    }
+
     public Context getActivity() {
         return this;
     }

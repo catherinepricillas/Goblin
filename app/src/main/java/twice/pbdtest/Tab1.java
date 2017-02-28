@@ -1,20 +1,24 @@
 package twice.pbdtest;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.Image;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-public class CompassActivity extends FragmentActivity implements SensorEventListener {
+import static android.content.Context.SENSOR_SERVICE;
+
+//Our class extending fragment
+public class Tab1 extends Fragment implements SensorEventListener {
 
     private ImageView image;
 
@@ -26,20 +30,26 @@ public class CompassActivity extends FragmentActivity implements SensorEventList
     SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs" ;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compass);
+    //Overriden method onCreateView
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        image = (ImageView) findViewById(R.id.imgCompass);
+        //Returning the layout file after inflating
+        //Change R.layout.tab1 in you classes
+        View view = inflater.inflate(R.layout.tab1, container, false);
+        image = (ImageView) view.findViewById(R.id.imgCompass);
 
-        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         sensor_acc = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensor_mag = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+
+        return view;
     }
+
+
 
     float[] mGravity;
     float[] mGeomagnetic;
+
     public void onSensorChanged(SensorEvent event) {
         float degree;
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
@@ -77,14 +87,14 @@ public class CompassActivity extends FragmentActivity implements SensorEventList
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         mSensorManager.registerListener(this, sensor_acc, SensorManager.SENSOR_DELAY_NORMAL);
         mSensorManager.registerListener(this, sensor_mag, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(this);
     }

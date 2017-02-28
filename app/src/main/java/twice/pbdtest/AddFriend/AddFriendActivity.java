@@ -87,7 +87,7 @@ public class AddFriendActivity extends AppCompatActivity {
 
                 // firebase add friend di sini
                 TextView t = (TextView) findViewById(R.id.message);
-                t.setText("You are now friend with "+user[0].getName());
+                t.setText("You are now friend with "+targetuid);
             }
 
             @Override
@@ -130,7 +130,7 @@ public class AddFriendActivity extends AppCompatActivity {
     private void handleShakeEvent(int count) {
         TextView t = (TextView) findViewById(R.id.message);
         t.setTextSize(20);
-        t.setText("Searching for your new friend");
+        t.setText("Shaken");
         initiateFriendship();
     }
 
